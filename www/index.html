@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTPPS Server</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .stack {
+            display: inline-block;
+            text-align: left;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .layer {
+            padding: 8px 20px;
+            margin: 4px 0;
+            border-left: 3px solid #333;
+            transition: all 0.3s;
+        }
+
+        .layer:hover {
+            border-left-color: #00ff88;
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .layer .label {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .layer .desc {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .phase {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 6px 16px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 20px;
+            color: #00ff88;
+            font-size: 0.9rem;
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ HTPPS</h1>
+        <p class="subtitle">HTTPS server from scratch — zero dependencies</p>
+
+        <div class="stack">
+            <div class="layer">
+                <span class="label">HTTPS</span>
+                <span class="desc"> — TLS + HTTP combined ✓</span>
+            </div>
+            <div class="layer">
+                <span class="label">TLS 1.2</span>
+                <span class="desc"> — handshake, record layer, alerts ✓</span>
+            </div>
+            <div class="layer">
+                <span class="label">Crypto</span>
+                <span class="desc"> — SHA-256, HMAC, AES-128-CBC, RSA-2048 ✓</span>
+            </div>
+            <div class="layer">
+                <span class="label">HTTP/1.1</span>
+                <span class="desc"> — request parser, response builder ✓</span>
+            </div>
+            <div class="layer">
+                <span class="label">TCP</span>
+                <span class="desc"> — raw socket I/O ✓</span>
+            </div>
+        </div>
+
+        <br>
+        <span class="phase pulse">🔒 Phase 5 Complete — Serving over HTTPS</span>
+    </div>
+</body>
+</html>
